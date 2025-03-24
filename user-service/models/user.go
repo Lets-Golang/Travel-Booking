@@ -11,3 +11,7 @@ type UserDTO struct {
 	Name  string `json:"name"`
 	Email string `json:"email"`
 }
+
+type ErrorResponse struct {
+    Error string `json:"error"`
+}

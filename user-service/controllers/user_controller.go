@@ -16,7 +16,7 @@ import (
 // @Produce json
 // @Param user body models.UserDTO true "User data"
 // @Success 201 {object} models.UserDTO
-// @Failure 400 {object} gin.H
+// @Failure 400 {object} models.ErrorResponse
 // @Router /users [post]
 func CreateUser(service *services.UserService) gin.HandlerFunc {
     return func(c *gin.Context) {
@@ -40,7 +40,7 @@ func CreateUser(service *services.UserService) gin.HandlerFunc {
 // @Produce json
 // @Param id path int true "User ID"
 // @Success 200 {object} models.UserDTO
-// @Failure 404 {object} gin.H
+// @Failure 404 {object} models.ErrorResponse
 // @Router /users/{id} [get]
 func GetUser(service *services.UserService) gin.HandlerFunc {
     return func(c *gin.Context) {
