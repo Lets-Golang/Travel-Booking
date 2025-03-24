@@ -1,4 +1,4 @@
-module github.com/Lets-Golang/Travel-Booking
+module github.com/Lets-Golang/Travel-Booking/user-service
 
 go 1.24.0
 
