@@ -40,11 +40,11 @@ func main() {
 	r := gin.Default()
 
 	docs.SwaggerInfo.Title = "User Service API"
-    docs.SwaggerInfo.Description = "API for managing users in the Travel Booking system"
-    docs.SwaggerInfo.Version = "1.0"
-    docs.SwaggerInfo.Host = "localhost:8081"
-    docs.SwaggerInfo.BasePath = "/"
-    docs.SwaggerInfo.Schemes = []string{"http"}
+	docs.SwaggerInfo.Description = "API for managing users in the Travel Booking system"
+	docs.SwaggerInfo.Version = "1.0"
+	docs.SwaggerInfo.Host = "localhost:8081"
+	docs.SwaggerInfo.BasePath = "/"
+	docs.SwaggerInfo.Schemes = []string{"http"}
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.POST("/users", controllers.CreateUser(service))
