@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - '8081:8081'
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    external: true
+    name: bridge
