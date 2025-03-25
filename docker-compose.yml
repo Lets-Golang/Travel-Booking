@@ -8,9 +8,23 @@ services:
     ports:
       - '8081:8081'
     networks:
-      - postgres-network
+      - travel-network
+
+  db:
+    image: postgres:13.3
+    container_name: travel-booking-db
+    env_file:
+      - .env
+    ports:
+      - '5433:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - travel-network
 
 networks:
-  postgres-network:
-    external: true
-    name: bridge
+  travel-network:
+    driver: bridge
+
+volumes:
+  db-data:
