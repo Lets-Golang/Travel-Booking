@@ -13,7 +13,7 @@ func NewUserService(repo *repositories.UserRepository) *UserService {
     return &UserService{repo: repo}
 }
 
-func (s *UserService) Create(dto models.UserDTO) (models.UserDTO, error) {
+func (s *UserService) Create(dto models.UserCreateDTO) (models.UserDTO, error) {
     user := models.UserEntity{Name: dto.Name, Email: dto.Email}
     err := s.repo.Create(&user)
     return models.UserDTO{ID: user.ID, Name: user.Name, Email: user.Email}, err

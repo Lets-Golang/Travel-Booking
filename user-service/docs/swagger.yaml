@@ -4,6 +4,13 @@ definitions:
       error:
         type: string
     type: object
+  models.UserCreateDTO:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+    type: object
   models.UserDTO:
     properties:
       email:
@@ -27,7 +34,7 @@ paths:
         name: user
         required: true
         schema:
-          $ref: '#/definitions/models.UserDTO'
+          $ref: '#/definitions/models.UserCreateDTO'
       produces:
       - application/json
       responses:
