@@ -14,13 +14,13 @@ import (
 // @Tags users
 // @Accept json
 // @Produce json
-// @Param user body models.UserDTO true "User data"
+// @Param user body models.UserCreateDTO true "User data"
 // @Success 201 {object} models.UserDTO
 // @Failure 400 {object} models.ErrorResponse
 // @Router /users [post]
 func CreateUser(service *services.UserService) gin.HandlerFunc {
     return func(c *gin.Context) {
-        var dto models.UserDTO
+        var dto models.UserCreateDTO
         if err := c.BindJSON(&dto); err != nil {
             c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
             return
